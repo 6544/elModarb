@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>logFormatVersion</key>
+	<integer>9</integer>
+	<key>logs</key>
+	<dict>
+		<key>6AF3A9E4-FF86-4B3A-8936-6AC46D378413</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>6AF3A9E4-FF86-4B3A-8936-6AC46D378413.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>ModarebAraby project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ModarebAraby</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace ModarebAraby with scheme ModarebAraby and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>564693619.15322804</real>
+			<key>timeStoppedRecording</key>
+			<real>564693627.33882201</real>
+			<key>title</key>
+			<string>Building workspace ModarebAraby with scheme ModarebAraby and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>6AF3A9E4-FF86-4B3A-8936-6AC46D378413</string>
+		</dict>
+		<key>EBBFDD9D-B2F4-4421-AF90-23450F69708B</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>EBBFDD9D-B2F4-4421-AF90-23450F69708B.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>E</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>ModarebAraby project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>ModarebAraby</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building workspace ModarebAraby with scheme ModarebAraby and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>564694366.095101</real>
+			<key>timeStoppedRecording</key>
+			<real>564694371.52058697</real>
+			<key>title</key>
+			<string>Building workspace ModarebAraby with scheme ModarebAraby and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>EBBFDD9D-B2F4-4421-AF90-23450F69708B</string>
+		</dict>
+	</dict>
+</dict>
+</plist>

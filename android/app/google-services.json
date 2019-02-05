@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "110302996334",
+    "firebase_url": "https://finalmodarebaraby.firebaseio.com",
+    "project_id": "finalmodarebaraby",
+    "storage_bucket": "finalmodarebaraby.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110302996334:android:e8d2cb42bc5eded9",
+        "android_client_info": {
+          "package_name": "com.modarebaraby"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110302996334-o67715via8h89rp11jaqb92r2h5n2r71.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhmN3qORt-Pnd9s_aNvSNad2J3FAif6Lc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
