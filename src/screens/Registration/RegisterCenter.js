@@ -10,6 +10,8 @@ import {
     Card, CardItem, List, ListItem, Body, Item, Picker, CheckBox, Container, Content, Header, Icon
 } from 'native-base';
 import { RenderCustomPicker } from '../../Ui/NewcustomPicker';
+import { RenderCustomPicker1 } from '../../Ui/NewcustomPicker1';
+
 import { Colors } from '../../assets/colors';
 import { CustomButton } from '../../Ui/customButon';
 
@@ -44,7 +46,7 @@ const options = {
 
 
 const validate = values => {
-    debugger;
+   // debugger;
     const errors = {};
     if (!values.name)
         errors.name = localization.required;
@@ -130,7 +132,7 @@ const validate = values => {
     if (!values.city)
         errors.city = localization.required
 
-    debugger;
+   // debugger;
     return errors;
 }
 
@@ -140,7 +142,7 @@ class RegisterCenter extends Component {
     registerCenterButton;
     constructor(props) {
         super(props);
-        debugger;
+       // debugger;
         this.state = {
             avatarSource: null,
             visible: false,
@@ -159,7 +161,7 @@ class RegisterCenter extends Component {
 
     renderTextareaField = (props) => {
         
-        debugger;
+       // debugger;
         return (
             <View style={{ flex: 0.4 }}>
 
@@ -178,7 +180,7 @@ class RegisterCenter extends Component {
     }
 
     submitCenter = (values) => {
-        debugger;
+       // debugger;
         if (this.state.policyChecked) {
             this.props.onRegisterCenter({
                 name: values.name,
@@ -230,19 +232,37 @@ class RegisterCenter extends Component {
         )
     }
     componentDidMount() {
+        alert('jjjjjjj')
         this.props.getAllCountries();
+        this.prefix='966';
+        this.props.getAllCities(
+            {
+                "id": 191,
+                "sortname": "SA",
+                "name_en": "Saudi Arabia",
+                "name_ar": "المملكة العربية السعودية",
+                "phonecode": "966",
+                "created_at": "2018-09-29 04:11:05",
+                "updated_at": "2018-11-05 11:36:50"
+            }
+        );
 
     }
     _toggleModal = () =>
         this.setState({ visible: !this.state.visible });
-    getAllNeededCountries(countries) {
+     getAllNeededCountries(countries) {
 
-
-
-        this.allCountriesLocal = countries.countries.map((item, index) => {
-            if (item !== null)
-                return (<Picker.item key={item.id} label={item.name_en} value={item} />)
+      try {
+        this.allCountriesLocal =countries.countries.map((item, index) => {
+            if (typeof item !== 'undefined')
+                return (<Picker.Item key={item.id} label={item.name_en} value={item} />)
         })
+
+      } catch (error) {
+          console.log('=============allcounterues=======================')
+          console.log(error)
+          console.log('====================================')
+      }
     }
 
 
@@ -283,13 +303,14 @@ class RegisterCenter extends Component {
         if (this.props.cities)
 
             this.allCitiesLocal = this.props.cities.states.map((item, index) => {
+                if (typeof item !== 'undefined')
                 return (
                     <Picker.item key={item.id} label={item.name_en} value={item} />)
 
             })
 
         if (this.props.errorsList) {
-            debugger;
+           // debugger;
             this.state.errList=[];
             for (let err in this.props.errorsList) {
                 this.state.errList.push(<AppText style={{color:Colors.red}} text={this.props.errorsList[err][0]}/>);
@@ -297,7 +318,7 @@ class RegisterCenter extends Component {
         }
         //change
         if (this.props.center) {
-            debugger;
+           // debugger;
             this.refs.toast.show(this.props.center.msg,1500,()=>{
                 new LocalStorage().setVisits({ id: this.props.center.data.user.id, num: 0 });
 
@@ -334,6 +355,9 @@ class RegisterCenter extends Component {
                                 text={this.state.name}
                                 placeholder={localization.placeholder50}
                                 label={localization.name} />
+                                   <Field label='المؤسسة' data={[<Picker.Item value="center" key="0" label="مركز" />,
+                 <Picker.Item key="1" value="Statue" label="معهد تدريب أو إستشارات" />]} name="department" component={RenderCustomPicker} type="text" />
+
                             <Field
                                 component={this.renderInputField}
                                 name="manager"
@@ -348,15 +372,19 @@ class RegisterCenter extends Component {
                                 changeText={(text) => this.setState({ establishment: text })}
                                 text={this.state.establishment} label={localization.YearFounded} />
 
-                            <Field name="country" component={RenderCustomPicker}
+                            <Field name="country" component={RenderCustomPicker1}
                                 onchangeValue={(country_id) => {
 
                                     console.log(country_id);
+                                    this.allCitiesLocal= [<Picker.item key='noCity' style={{color:'gray'}} label='جاري تحميل البيانات' value='جاري تحميل البيانات' />]
                                     this.props.getAllCities(country_id);
                                     this.prefix = country_id.phonecode;
+                                    this.setState({country_id:country_id})
                                 }}
+                                value={this.state.country_id}
                                 data={this.allCountriesLocal}
-                                label={localization.country} />
+                                label={localization.country}
+                                />
 
                             <Field name="city" component={RenderCustomPicker} onchangeValue={(city_id) => { this.setState({ city_id: city_id }) }}
                                 selected={this.state.city_id} //el mafrod teb2a label 
@@ -430,10 +458,61 @@ class RegisterCenter extends Component {
                                 label={localization.confirmPassword} style={{ flex: 0.3 }} />
 
                         </List>
-                        <View style={{ flexDirection: 'row', width: '90%', justifyContent: 'space-around' }}>
+                        <View style={{ flexDirection: 'row', width: '90%', justifyContent: 'center' }}>
                             <View style={{ flex: 0.3, left: 10 }}>
+                            <TouchableOpacity
+                        style={{
+                            borderWidth: 1,
+                            borderColor: 'rgba(0,0,0,0.2)',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            width: 100,
+                            height: 100,
+                            backgroundColor: '#fff',
+                            borderRadius: 100,
+                        }}
+                        onPress={() => {
+                            ImagePicker.showImagePicker(options, (response) => {
+                                console.log('Response = ', response);
+                                if (response.didCancel) {
+                                    console.log('User cancelled image picker');
+                                }
+                                else if (response.error) {
+                                    console.log('ImagePicker Error: ' + response.error);
+                                }
+                                // source{{uri:'file:///storage/emulated/0/DCIM/IMG_20161201_125218.jpg'}} 
+                                else {
+                                    this.setState({ image: response.uri, });
+                                    this.setState({
+                                        avatarSource: {
+                                            uri: response.uri,
+                                            type: 'image/jpg',
+                                            name: 'image.jpg',
+                                        }
+                                    })
+                                };
 
-                                <TouchableOpacity
+                            }
+                            );
+
+                        }}
+                    >
+                      {this.state.avatarSource === null ? (
+                     <Text style={{ textAlign: 'center', flexWrap: 'wrap', width: '50%' }}>{localization.upladImage}</Text>
+            ) : (
+            <Image     style={{
+                borderWidth: 1,
+                borderColor: 'rgba(0,0,0,0.2)',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 100,
+                height: 100,
+                backgroundColor: '#fff',
+                borderRadius: 100,
+            }} source={{uri:this.state.avatarSource.uri}} />)}
+                    </TouchableOpacity>
+              
+                                {/* <TouchableOpacity
                                     style={{
                                         borderWidth: 1,
                                         borderColor: 'rgba(0,0,0,0.2)',
@@ -472,11 +551,10 @@ class RegisterCenter extends Component {
                                 >
                                     <Text style={{ textAlign: 'center', flexWrap: 'wrap', width: '50%' }}>{localization.upladImage}</Text>
                                 </TouchableOpacity>
+                          */}
                             </View>
-                            {/* <View style={{ flex: 0.4 }}>
-                                <Image source={this.state.avatarSource} style={{ height: '40%', width: '70%', alignSelf: 'center', flex: 1 }} />
-                            </View> */}
-                            <View style={{ flex: 0.3 }}>
+       
+                            {/* <View style={{ flex: 0.3 }}>
                             <TouchableOpacity
                         style={{
                             borderWidth: 1,
@@ -489,7 +567,7 @@ class RegisterCenter extends Component {
                             borderRadius: 100,
                         }}
                         onPress={() => {
-                            debugger;
+                           // debugger;
                             this.setState({ visible: true });
                             //  this.renderModal(true)
 
@@ -503,12 +581,15 @@ class RegisterCenter extends Component {
                             <Text style={{ textAlign: 'center', flexWrap: 'wrap', width: '45%' }}>{localization.show}</Text>
 
                         }
-                                    {/* <Text style={{ textAlign: 'center', flexWrap: 'wrap', width: '45%' }}>معاينة</Text> */}
                                 </TouchableOpacity>
 
 
                             </View>
+                        */}
                         </View>
+
+
+                        
                         <Modal
                             style={{ alignSelf: 'center', width: '80%', height: '80%' }}
                             //  backdropColor='white' 

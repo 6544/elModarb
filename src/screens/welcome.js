@@ -54,7 +54,7 @@ class Welcome extends Component {
             body: emailData
         });
         const data = await response.json();
-        debugger;
+       // debugger;
 
         if (data.data.errors) {
             this.refs.toast.show(data.data.errors["email"]);
@@ -148,7 +148,7 @@ class Welcome extends Component {
         }
 
         else {
-            debugger;
+           // debugger;
             this.content = (
                 <CustomButton onPress={async () => this.GetVisitor()
                 }
@@ -160,7 +160,7 @@ class Welcome extends Component {
         if (this.props.data) {
 
             if (this.props.data.status) {
-                debugger;
+               // debugger;
                 new LocalStorage().setLoginUser(this.props.visitor);
                 this.props.navigation.navigate('Home')
             }
@@ -253,7 +253,7 @@ class Welcome extends Component {
                 </View>
                 <View style={styles.registerContainer}>
                     <CustomButton onPress={async () => {
-                        debugger;
+                       // debugger;
                         const connected = await this.checkConnection()
                         if (connected) {
                             this.props.navigation.navigate('registerTrainer')
@@ -284,7 +284,7 @@ class Welcome extends Component {
                         </View>
                     </Button>
                     <CustomButton text={localization.visitor} style={{ backgroundColor: Colors.orange }} onPress={async () => {
-                        debugger;
+                       // debugger;
                         const connected = await this.checkConnection();
                         if (connected) {
                             this.props.navigation.navigate('register', { navigation: this.props.navigation })

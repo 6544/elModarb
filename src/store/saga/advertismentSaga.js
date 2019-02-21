@@ -17,9 +17,9 @@ else{
 }
 }
 function* getAllAdvertisments(){
-    debugger;
+   // debugger;
     const data=yield call(api.getAllAdvertisments);
-    debugger;
+   // debugger;
     if(data.status){
         yield put(AllAdvertismentsSuccess(data.data.advertisements))
     }

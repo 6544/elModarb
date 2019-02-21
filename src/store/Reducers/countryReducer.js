@@ -1,6 +1,6 @@
 import { ALL_CITIES_REQUEST, ALL_CITIES_SUCCESS, ALL_CITIES_FAILURE, ALL_COUNTRIES_REQUEST, ALL_COUNTRIES_SUCCESS, ALL_COUNTRIES_FAILURE, 
     ALL_CITIES_OF_STATES_FAILURE,ALL_CITIES_OF_STATES_SUCCESS,ALL_CITIES_OF_STATES_REQUEST,
-    ALL_NATIONALITIES_REQUEST, ALL_NATIONALITIES_SUCCESS, ALL_NATIONALITIES_FAILURE, SELECT_CITIES, SELECT_COUNTRY, SELECT_NATIONALITY } from "../Actions/actionTypes/CountryTypes";
+    ALL_NATIONALITIES_REQUEST, ALL_NATIONALITIES_SUCCESS, ALL_NATIONALITIES_FAILURE, SELECT_CITIES, SELECT_COUNTRY, SELECT_NATIONALITY, IS_Fetching } from "../Actions/actionTypes/CountryTypes";
 const initialstate = {
     success: false,
     error: false,
@@ -11,11 +11,15 @@ const initialstate = {
     selectCountry: null,
     selectNationality: null,
     prefix: null,
-    citiesOfState:null
+    citiesOfState:null,
+    loading:true,
 }
 
 export default countryReducer = (state = initialstate, action) => {
-    debugger;
+   // debugger;
+   console.log('=========STATES===========================');
+   console.log(state);
+   console.log('====================================');
     switch (action.type) {
         case ALL_COUNTRIES_REQUEST:
             return {
@@ -113,6 +117,10 @@ export default countryReducer = (state = initialstate, action) => {
             return {
                 ...state,
                 selectNationality: action.nationality
+            }
+        case IS_Fetching:
+            return{
+                ...state,
             }
         default:
             return state

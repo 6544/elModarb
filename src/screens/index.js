@@ -6,9 +6,9 @@ import Home from './Home';
 import Profile from "./profile";
 import SocialMedia from "./socialMedia";
 import ResetPassword from './resetPassword';
-import Consultant from '../screens/الفئات/mostsharen';
-import TabsList from '../screens/الفئات/Tabs';
-//import Search from '../screens/الفئات/search';
+import Consultant from '../screens/Categories/mostsharen';
+import TabsList from '../screens/Categories/Tabs';
+//import Search from '../screens/Categories/search';
 import JobCard from './jobCard';
 import SideDrawer from './Drawer';
 import Management from './management';
@@ -19,13 +19,13 @@ import RegisterTrainer from './Registration/RegisterTrainer';
 import RegisterCenter from './Registration/RegisterCenter';
 import SplashScreen from './splashScreen';
 import RegistrationSuccess from './Registration/RegsitrationSuccess';
-import Trainers from './الفئات/trainers';
+import Trainers from './Categories/trainers';
 import { Language } from './language';
 import { ProfilePage } from "../screens/Profile/profile";
 import Search from "../screens/search";
 import SearchResults from "../screens/searchResults";
-import CenterDetails from "../screens/الفئات/CenterDetails";
-import TrainerDetails from "../screens/الفئات/trainerDetails";
+import CenterDetails from "../screens/Categories/CenterDetails";
+import TrainerDetails from "../screens/Categories/trainerDetails";
 import VisitorRegistrationSuccess from './Registration/VisitorRegistrationSuccess';
 import VisitorComponentForm from '../screens/Registration/registerVisitorForm';
 import { Statistics } from '../screens/statistics';
@@ -70,6 +70,7 @@ const stack = createStackNavigator({
 
 },
    {
+      // initialRouteName:"registerForm",
       headerMode: 'none'
    }
 

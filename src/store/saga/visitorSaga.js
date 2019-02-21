@@ -26,7 +26,7 @@ function * UpdateVisitor(action){
 
 }
 function * RequestRegisterVisitor(action){
-    debugger;
+   // debugger;
     const data=yield call(()=>api.visitorRegister(action.visitorData))
     console.log(data);
     if(data.status){

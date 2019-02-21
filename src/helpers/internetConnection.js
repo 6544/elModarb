@@ -10,7 +10,7 @@ componentDidMount(){
  
 async checkConnection(){
     const connectionInfo=await NetInfo.getConnectionInfo();
-    debugger;
+   // debugger;
     if(connectionInfo.type!="none"){
        return true;
     }

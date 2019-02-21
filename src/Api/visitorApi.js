@@ -6,7 +6,7 @@ export class Api {
     logoutUrl = "http://almodarrebalarabi.com/api/logout";
 
     async visitorLogin(visitorData) {
-        debugger;
+       // debugger;
         this.formData = new FormData();
         this.formData.append("email", visitorData.email);
         this.formData.append("password", visitorData.password);
@@ -16,13 +16,13 @@ export class Api {
                 body: this.formData
             })
         var data = await response.json();
-        debugger;
+       // debugger;
 
         return data;
 
     }
     async visitorRegister(visitorData) {
-        debugger;
+       // debugger;
         this.formData = new FormData();
         this.formData.append("name", visitorData.name);
         this.formData.append("email", visitorData.email)
@@ -42,7 +42,7 @@ export class Api {
                 body: this.formData
             });
         const data = await response.json();
-        debugger;
+       // debugger;
         console.log("api data " + data);
         return data;
 

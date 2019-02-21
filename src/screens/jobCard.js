@@ -54,7 +54,7 @@ class JobCard extends Component {
         }
     }
     render() {
-        debugger;
+       // debugger;
         if(this.props.professionalSuccessData){
             this.refs.toast.show(this.props.professionalSuccessData.msg,2000,()=>{
                 this.props.navigation.navigate('profile');

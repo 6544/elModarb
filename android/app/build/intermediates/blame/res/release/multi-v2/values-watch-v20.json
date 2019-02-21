@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/macbookair/Documents/GitHub/FinalModarebAraby/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "outputFile": "/Volumes/PARTITION2/yarb/elModarb/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-watch-v20/values-watch-v20.xml",
             "map": [
                 {
-                    "source": "/Users/macbookair/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/b877873ab63eeaad6feae097864cfd28/res/values-watch-v20/values-watch-v20.xml",
+                    "source": "/Users/ehshs/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a999d63e31b8a8e7803cfcd5a48a397a/res/values-watch-v20/values-watch-v20.xml",
                     "from": {
                         "startLines": "2,5,8",
                         "startColumns": "4,4,4",

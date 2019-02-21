@@ -14,10 +14,10 @@ export class Statistics extends Component{
         this.getVisitsNumber();
     }
     async getVisitsNumber() {
-        debugger;
+       // debugger;
         const num = await new LocalStorage().getVisits();
         let finalnum=-1;
-            debugger;
+           // debugger;
             console.log(num+" number");
             if(num===-1)
             finalnum=0;

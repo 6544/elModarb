@@ -18,7 +18,7 @@ import { AppText } from "../Ui/appText";
 
 const validate=values=>{
     console.log(errors);
-    debugger;
+   // debugger;
     const errors={};
     if(!values.oldpassword){
         errors.oldpassword=localization.required;
@@ -55,7 +55,7 @@ class ResetPassword extends Component {
    
    
     updateDataSubmit = values => {
-        debugger;
+       // debugger;
         this.counterInfo=1;
         this.props.updatePassword(
             {
@@ -100,7 +100,7 @@ class ResetPassword extends Component {
             })
         }
         else if (this.props.errorData) {
-            debugger;
+           // debugger;
             if(this.counterInfo!=0){
                 if(this.props.errorData.msg==="token_expired"){
                     this.refs.toast.show(this.props.errorData.msg,1500,()=>{

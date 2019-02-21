@@ -17,7 +17,7 @@
 
             });
             const data=await response.json();
-            debugger;
+           // debugger;
             return data;
     }
 }

@@ -4,7 +4,7 @@ import {Api} from '../../Api/searchApi';
 
 function* searchByNameSaga(action)
 {
-    debugger;
+   // debugger;
     try{
           
   const result=yield Api.searchByNameFromApi(action.newObject);

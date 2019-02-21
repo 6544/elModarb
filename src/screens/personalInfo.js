@@ -21,7 +21,7 @@ import Toast from "react-native-easy-toast";
 
 const validate = values => {
 
-    debugger;
+   // debugger;
     const errors = {};
 
     if (values.email) {
@@ -59,7 +59,7 @@ class PersonalInfo extends Component {
     updateduser = {};
 
     updateUserData = (values) => {
-        debugger;
+       // debugger;
         this.updateduser.name = values.fullname ? values.fullname : LocalStorage.user.name;
         this.updateduser.email = values.email ? values.email : LocalStorage.user.email;
         this.updateduser.phone = values.phone ? values.phone : LocalStorage.user.phone;
@@ -100,7 +100,7 @@ class PersonalInfo extends Component {
         )
     }
     renderPickerField = (props) => {
-        debugger;
+       // debugger;
         if (props.input.name == 'country') {
             if (props.input.value) {
                 this.props.getcities(props.input.value);
@@ -186,7 +186,7 @@ class PersonalInfo extends Component {
             )
         }
         if (this.props.updateInfoSuccessData) {
-            debugger;
+           // debugger;
             if (this.refs.toast)
                 this.refs.toast.show(this.props.updateInfoSuccessData.msg, 1500, () => {
                     LocalStorage.user.name = this.updateduser.name;

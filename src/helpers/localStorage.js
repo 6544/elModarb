@@ -3,7 +3,7 @@ export class LocalStorage{
     static user;
     static token;
    async setLoginUser(userData){
-       debugger;
+      // debugger;
    await AsyncStorage.setItem('user',JSON.stringify(userData));
    LocalStorage.user=userData;
     }
@@ -18,7 +18,7 @@ export class LocalStorage{
     
     }
     async setUserSocial(key,value){
-        debugger;
+       // debugger;
    await AsyncStorage.setItem(key,value.toString());
     }
     async getUserSocial(key){
@@ -36,7 +36,7 @@ export class LocalStorage{
     async getVisits(){
         const visits=await AsyncStorage.getItem("visit");
         const visitObj=JSON.parse(visits);
-        debugger;
+       // debugger;
         if(visitObj)
         return visitObj.num;
         else{

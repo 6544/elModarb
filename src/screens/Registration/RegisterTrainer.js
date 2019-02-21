@@ -40,7 +40,7 @@ const options = {
     },
 };
 const validate = values => {
-    debugger;
+   // debugger;
     const errors = {};
     if (!values.fullname) {
         errors.fullname = localization.required;
@@ -150,13 +150,27 @@ class RegisterTrainer extends Component {
         avatarSource: null,
         image: null,
         errList: [],
-        policyChecked: false
+        policyChecked: false,
+        checkColor:'black',
+        selectedCity:null,
     }
     constructor(props) {
         super(props);
-
+       
     }
     componentDidMount() {
+        this.props.getAllCities(
+            {
+                "id": 191,
+                "sortname": "SA",
+                "name_en": "Saudi Arabia",
+                "name_ar": "المملكة العربية السعودية",
+                "phonecode": "966",
+                "created_at": "2018-09-29 04:11:05",
+                "updated_at": "2018-11-05 11:36:50"
+            }
+        );
+        this.prefix='966';
         this.props.getAllCountries();
         this.props.getAllNationalities();
     }
@@ -181,7 +195,7 @@ class RegisterTrainer extends Component {
 
     renderTextareaField = (props) => {
 
-        debugger;
+       // debugger;
         return (
             <View style={{ flex: 0.4 }}>
 
@@ -215,7 +229,10 @@ class RegisterTrainer extends Component {
     }
     getAllNationalities(nationalities) {
         this.allNationalitiesLocal = nationalities.nationalities.map(item =>
-            <Picker.Item key={item.id} label={item.name_en} value={item.id} />)
+            <Picker.Item key={item.id} label={item.name_en} value={item.id} />);
+            console.log('=========NAt===========================')
+            console.log( this.allNationalitiesLocal)
+            console.log('====================================')
         
     }
     renderList() {
@@ -229,27 +246,39 @@ class RegisterTrainer extends Component {
 
 
 
-                <Field label={localization.sex} data={[<Picker.Item value="male" key="0" label="Male" />, <Picker.Item key="1" value="female" label="Female" />]} name="sex" component={RenderCustomPicker} type="text" />
+                <Field label={localization.sex} data={[<Picker.Item value="male" key="0" label="Male" />,
+                 <Picker.Item key="1" value="female" label="Female" />]} name="sex" component={RenderCustomPicker} type="text" />
 
 
                 <Field
-                    onchangeValue={(country_id) => {
-
-                        this.prefix = country_id.phonecode;
-                        this.props.getAllCities(country_id);
-
+                component={RenderCustomPicker}
+                    onchangeValue={(itemValue,itemIndex) => {
+                       
+                        // console.log('================country====================');
+                        // console.log(country_id.name_ar)
+                        // console.log('====================================');
+                        // // this.prefix = country_id.phonecode;
+                        // // this.props.getAllCities(country_id);
+                       // this.setState({selectedCity:itemValue})
+                        console.log('================country====================');
+                        console.log(itemValue)
+                        console.log('====================================');
+                        // this.prefix = country_id.phonecode;
+                        // this.props.getAllCities(country_id);
                     }}
 
-                    label={localization.country} data={this.allCountriesLocal} val={64} placeholder={localization.pickCountry} name="country" component={RenderCustomPicker} />
+                    label={localization.country} data={this.allCountriesLocal} val={64} placeholder={localization.pickCountry} name="country"  />
 
 
-                <Field placeholder={localization.pickCity} containerStyle={{ top: '4%' }} val={194} label={localization.city} data={this.allCitiesLocal} name="city" component={RenderCustomPicker} />
+                <Field placeholder={localization.pickCity} data={this.allCitiesLocal} val={191} label={localization.city}  name="city" component={RenderCustomPicker} />
 
 
 
-                <Field data={this.allNationalitiesLocal} placeholder="select" val={194} label={localization.nationality} name="nationality" component={RenderCustomPicker1} />
+                <Field component={RenderCustomPicker} data={this.allNationalitiesLocal} placeholder="select" val={194} label={localization.nationality} name="nationality"  />
 
-                <Field label={localization.character} name="character" component={this.renderInputField} type="text" placeholder={localization.characterPlaceholder} />
+                {/* <Field label={localization.character} name="character" component={this.renderInputField} type="text" placeholder={localization.characterPlaceholder} /> */}
+                <Field label={localization.character} data={[<Picker.Item value="consultant" key="0" label="مستشار" />,
+                 <Picker.Item key="1" value="Trainer" label="مدرب" />]} name="character" component={RenderCustomPicker} type="text" />
 
 
                 <ListItem itemHeader first>
@@ -262,6 +291,21 @@ class RegisterTrainer extends Component {
 
                 {/* <Field name="trainerField" label={localization.Areas} component={this.renderTextareaField} /> */}
                 <Field name="trainerField" data={this.allNationalitiesLocal} label={localization.Areas} component={RenderCustomPicker} />
+                <Field label={localization.Areas} data={[
+                 <Picker.Item value="Development" key="0" label="البرمجة والتصميم" />,
+                 <Picker.Item value="Development" key="1" label="تنمية بشرية" />,
+                 <Picker.Item value="Development" key="2" label="الالكترونيات" />,
+                 <Picker.Item value="Development" key="3" label="العلوم والتكنولجيا" />,
+                 <Picker.Item value="Development" key="4" label="الصحافة والإعلام" />,
+                 <Picker.Item value="Development" key="5" label="الرسم" />,
+                 <Picker.Item value="Development" key="6" label="تكنولجيا المعلومات" />,
+                 <Picker.Item value="Development" key="7" label="الهندسة" />,
+                 <Picker.Item value="Development" key="8" label="الفزياء" />,
+                 <Picker.Item value="Development" key="9" label="الطاقة النووية" />,
+
+
+            ]} name="trainerField" component={RenderCustomPicker} type="text" />
+
 
                 <ListItem>
                     <Label style={{ backgroundColor: 'orange', color: 'white', height: '140%', flex: 0.9 }}>{localization.trainingTours}</Label>
@@ -295,7 +339,7 @@ class RegisterTrainer extends Component {
     }
     renderImagePicker() {
         return (
-            <View style={{ flexDirection: 'row', width: '90%', justifyContent: 'space-around' }}>
+            <View style={{ flexDirection: 'row', width: '90%', justifyContent: 'center' }}>
                 <View style={{ flex: 0.3, left: 10 }}>
 
                     <TouchableOpacity
@@ -335,13 +379,25 @@ class RegisterTrainer extends Component {
 
                         }}
                     >
-                        <Text style={{ textAlign: 'center', flexWrap: 'wrap', width: '50%' }}>{localization.upladImage}</Text>
+                      {this.state.avatarSource === null ? (
+                     <Text style={{ textAlign: 'center', flexWrap: 'wrap', width: '50%' }}>{localization.upladImage}</Text>
+            ) : (
+            <Image     style={{
+                borderWidth: 1,
+                borderColor: 'rgba(0,0,0,0.2)',
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 100,
+                height: 100,
+                backgroundColor: '#fff',
+                borderRadius: 100,
+            }} source={{uri:this.state.avatarSource.uri}} />)}
                     </TouchableOpacity>
                 </View>
                 {/* <View style={{ flex: 0.4 }}>
                     <Image source={this.state.avatarSource} style={{ height: '40%', width: '70%', alignSelf: 'center', flex: 1 }} />
                 </View> */}
-                <View style={{ flex: 0.3 }}>
+                {/* <View style={{ flex: 0.3 }}>
                     <TouchableOpacity
                         style={{
                             borderWidth: 1,
@@ -354,7 +410,7 @@ class RegisterTrainer extends Component {
                             borderRadius: 100,
                         }}
                         onPress={() => {
-                            debugger;
+                           // debugger;
                             this.setState({ visible: true });
                             //  this.renderModal(true)
 
@@ -373,6 +429,7 @@ class RegisterTrainer extends Component {
 
 
                 </View>
+           */}
             </View>
         )
     }
@@ -413,16 +470,18 @@ class RegisterTrainer extends Component {
         )
     }
     renderSignUp() {
+        
         return (
             <View style={{ flexDirection: 'row' }}>
                 <View style={{ flex: 0.7, flexDirection: 'row' }}>
                     <ListItem>
-                        <CheckBox
-                            onPress={(event) => {
-                                this.setState({ policyChecked: !this.state.policyChecked })
+                        <CheckBox 
+                                                  onPress={(event) => {
+                                
+                                this.setState({ policyChecked: !this.state.policyChecked,checkColor:this.state.checkColor==='black'?Colors.lightBlue:'black'})
                             }
                             }
-                            style={{ backgroundColor: Colors.white }} checked={this.state.policyChecked} color='white' />
+                            style={{ backgroundColor: this.state.checkColor }} checked={this.state.policyChecked} color='black' />
                         <TouchableOpacity
                             onPress={() => this.props.navigation.push('policy')}
                         >
@@ -434,10 +493,11 @@ class RegisterTrainer extends Component {
                 </View>
                 {this.registerButton}
             </View>
+        
         )
     }
     submitTrainer = (values) => {
-        debugger;
+       // debugger;
         if (this.state.policyChecked) {
 
             this.props.onRegisterTrainer({
@@ -498,7 +558,7 @@ class RegisterTrainer extends Component {
         }
         if (this.props.countries) {
             this.getAllNeededCountries(this.props.countries);
-            console.warn(this.props.countries);
+           
 
         }
 
@@ -509,12 +569,21 @@ class RegisterTrainer extends Component {
         }
 
         if (this.props.cities) {
-            debugger;
-            this.allCitiesLocal = this.props.cities.states.map((item, index) => {
-                return (
-                    <Picker.item key={item.id} label={item.name_en} value={item} />)
-            }
+           // debugger;
+          this.allCitiesLocal=[];
+           this.props.cities.states.forEach((item,index)=>{
+            this.allCitiesLocal.push(
+                <Picker.item key={'city'+item.id} label={item.name_en} value={item} />
             )
+          })
+            // this.allCitiesLocal = this.props.cities.states.map((item, index) => {
+            //     return (
+            //         <Picker.item key={item.id} label={item.name_en} value={item} />
+            //         // <Text  key={item.id} >{item.name_en}</Text>
+                    
+            //         )
+            // }
+            // )
         }
 
 
@@ -530,7 +599,7 @@ class RegisterTrainer extends Component {
         else {
             if (this.props.errorsList) {
                 this.state.errList = [];
-                debugger;
+               // debugger;
                 if (this.props.errorsList === "TypeError:Network request failed") {
                     this.refs.toast(localization.internetConnection);
                 }
@@ -545,6 +614,7 @@ class RegisterTrainer extends Component {
         return (
             <Container style={{ flex: 1, backgroundColor: Colors.lightBlue }}>
                 <HeaderScreen navigation={this.props.navigation} />
+         
                 <Content contentContainerStyle={{ flex: 1 }}>
 
                     <ScrollView style={{ backgroundColor: Colors.lightBlue, width: '100%' }}>
@@ -572,6 +642,7 @@ class RegisterTrainer extends Component {
                         textStyle={{ color: 'white' }}
                     />
                 </Content>
+           
             </Container>
         )
     }

@@ -1,10 +1,10 @@
 searchUrl="http://almodarrebalarabi.com/api/search";
 async function searchByNameFromApi(newObject){
-    debugger;
+   // debugger;
     var tempbody=new FormData();
    if(newObject.type=="name")
    {
-       debugger;
+      // debugger;
     tempbody.append("name",newObject.name);
     console.log(tempbody);
    }
@@ -22,7 +22,7 @@ async function searchByNameFromApi(newObject){
         method:'POST',
         body:tempbody
     });
-    debugger;
+   // debugger;
     const data=await response.json();
     debugger
     console.log(data);

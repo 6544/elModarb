@@ -17,7 +17,7 @@ class SearchResults extends Component{
 }
 SetDataArray(centerChildren)
 {
-     debugger;
+    // debugger;
     console.log(centerChildren);
     if(centerChildren!=null)
     this.dataArray=centerChildren;

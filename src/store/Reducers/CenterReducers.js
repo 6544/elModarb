@@ -14,8 +14,8 @@ const initialState = {
 }
 
 const centersReducers = (state = initialState, action) => {
-    debugger;
-    debugger;
+   // debugger;
+   // debugger;
     switch (action.type) {
         case GET_ALL_CENTERS:
 
@@ -69,7 +69,7 @@ const centersReducers = (state = initialState, action) => {
             };
             break;
         case REGISTER_SUCCESS:
-            debugger;
+           // debugger;
             return {
                 ...state,
                 center: action.result,

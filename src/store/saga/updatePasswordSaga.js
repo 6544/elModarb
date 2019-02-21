@@ -5,7 +5,7 @@ import * as actions from "../Actions/actions/updatePassword";
 
 function* updateUserPassword(action)
 {
-         debugger;
+        // debugger;
   const data=yield Api.updatePassword(action.passwordData);
   if(data.status)
   {
@@ -13,13 +13,13 @@ function* updateUserPassword(action)
   }
         else
         {
-            debugger;
+           // debugger;
             yield put(actions.UpdatePasswordFailure(data));
         }
   
 }
 export function* watchUpdatePassword(){
-    debugger;
+   // debugger;
 
     yield takeLatest(passwordActions.UPDATEPASSWORD_REQUEST,updateUserPassword);
 }

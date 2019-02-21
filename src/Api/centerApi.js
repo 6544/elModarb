@@ -7,7 +7,7 @@ async function getAllCentersFromApi() {
 }
 PostCenterUrl = "http://almodarrebalarabi.com/api/register/center";
 async function RegisterCenter(newCenter) {
-    debugger;
+   // debugger;
     var tempbody = new FormData();
 
     tempbody.append("name", newCenter.name);
@@ -50,9 +50,9 @@ async function RegisterCenter(newCenter) {
 
         body: tempbody
     });
-    debugger;
+   // debugger;
     const data = await response.json();
-    debugger;
+   // debugger;
     console.log(data);
     return data;
 }

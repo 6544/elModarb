@@ -14,13 +14,14 @@ import { AppText } from '../../Ui/appText';
 import Toast from "react-native-easy-toast";
 import { RegisterVisitorRequest } from "../../store/Actions/actions/visitor";
 import { LocalStorage } from "../../helpers/localStorage";
+import VR from './VR';
 
 
 
 
 const validate = values => {
 
-    debugger;
+   // debugger;
     console.log(values);
     const errors = {};
     if (!values.fullname) {
@@ -93,7 +94,7 @@ class VisitorComponentForm extends Component {
     constructor(props) {
 
         super(props);
-        debugger;
+       // debugger;
 
     }
     componentDidMount() {
@@ -257,6 +258,9 @@ class VisitorComponentForm extends Component {
 
 
     render() {
+        return(
+            <VR />
+        )
         if (this.props.loading) {
             this.saveButton =
                 <ListItem style={{ flex: 0.5,width: 100, height: 100 }}>

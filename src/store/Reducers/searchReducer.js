@@ -15,7 +15,7 @@ import {SEARCH,SEARCH_FAIL,SEARCH_SUCCESS} from '../Actions/actionTypes/searchTy
           
             case SEARCH:
              
-        debugger;
+       // debugger;
                 return {...state,
                 newObject:action.newObject,
                 loading:true,

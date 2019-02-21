@@ -1,7 +1,7 @@
 import {GET_ALL_TRAINERS_FAIL,GET_ALL_TRAINERS,GET_ALL_TRAINERS_SUCCESS,
     REGISTER,REGISTER_TRAINER_FAIL,REGISTER_TRAINER_SUCCESS} from '../actionTypes/TrainersTypes';
     export const registerTrainerAction=(newTrainer)=>{
-    debugger;
+   // debugger;
    
     return{
         type:REGISTER,
@@ -9,13 +9,13 @@ import {GET_ALL_TRAINERS_FAIL,GET_ALL_TRAINERS,GET_ALL_TRAINERS_SUCCESS,
     }
 }
 export const getAllTrainers=()=>{
-    debugger;
+   // debugger;
     return{
         type:GET_ALL_TRAINERS
     }
 }
 export const getAllTrainersSuccess=(errState)=>{
-    debugger;
+   // debugger;
    
    return{
        type:GET_ALL_TRAINERS_SUCCESS,
@@ -24,7 +24,7 @@ export const getAllTrainersSuccess=(errState)=>{
 }
 
 export const getAllTrainersFailed=(errState)=>{
-    debugger;
+   // debugger;
    return{
        type:GET_ALL_TRAINERS_FAIL,
        errState
@@ -32,7 +32,7 @@ export const getAllTrainersFailed=(errState)=>{
 }
 
 export const registerTrainerSuccess=(errState)=>{
-    debugger;
+   // debugger;
    
     return {
         type:REGISTER_TRAINER_SUCCESS,
@@ -40,7 +40,7 @@ export const registerTrainerSuccess=(errState)=>{
     }
 }
 export const registerTrainerFail=(errState)=>{
-    debugger;
+   // debugger;
    return {
        type:REGISTER_TRAINER_FAIL,
        errState

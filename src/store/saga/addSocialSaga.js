@@ -5,7 +5,7 @@ import * as socialactions from "../Actions/actions/socialIntegration";
 
 function* AddSocial(action)
 {
-         debugger;
+        // debugger;
   const data=yield Api.Add_UpdateSocialIntegration(action.socialData);
   if(data.status)
   {
@@ -13,13 +13,13 @@ function* AddSocial(action)
   }
         else
         {
-            debugger;
+           // debugger;
             yield put(socialactions.socialIntegrationFailure(data));
         }
   
 }
 export function* watchAddSocial(){
-    debugger;
+   // debugger;
 
     yield takeLatest(socialTypes.ADD_SOCIAL_INTERATION_REQUEST,AddSocial);
 }

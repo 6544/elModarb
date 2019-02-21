@@ -12,7 +12,7 @@ import { LocalStorage } from '../helpers/localStorage';
 const uri = "https://facebook.github.io/react-native/docs/assets/favicon.png";
 
 export const ContentData = (props) => {
-    debugger;
+   // debugger;
     return (
 
         <FlatList data={props.data}

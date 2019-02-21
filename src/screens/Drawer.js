@@ -26,14 +26,14 @@ class SideDrawer extends Component {
         await this.getVisitsNumber();
     }
     async getVisitsNumber() {
-        debugger;
+       // debugger;
         const num = await new LocalStorage().getVisits();
         if (num != -1) {
 
             if (LocalStorage.user) {
-                debugger;
+               // debugger;
                 if (LocalStorage.user.hasOwnProperty("professional_card")) {
-                    debugger;
+                   // debugger;
                     console.log(num + " number");
 
                     this.setState(
@@ -54,11 +54,11 @@ class SideDrawer extends Component {
 
     }
     getNationality() {
-        debugger;
+       // debugger;
         let nationality;
         this.getVisitsNumber();
         if (LocalStorage.user) {
-            debugger;
+           // debugger;
             const language = localization.getLanguage();
 
             if (language === "en") {

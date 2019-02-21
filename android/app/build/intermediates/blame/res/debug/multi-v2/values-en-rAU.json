@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "F:\\Hussein\\personal\\MROmar\\ArabyEdit\\ModarebAraby\\android\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-en-rAU\\values-en-rAU.xml",
+            "outputFile": "/Volumes/PARTITION2/yarb/elModarb/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-en-rAU/values-en-rAU.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\hussin.web\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\850e1393d528eb3e575c2f5a10912d4d\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "/Users/ehshs/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/a999d63e31b8a8e7803cfcd5a48a397a/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\hussin.web\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\0747174470011709824c038ebca34ca1\\res\\values-en-rAU\\values-en-rAU.xml",
+                    "source": "/Users/ehshs/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/b3f557513966f3e98ed3132c1071a238/res/values-en-rAU/values-en-rAU.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

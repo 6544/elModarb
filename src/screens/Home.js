@@ -2,7 +2,7 @@ import React,{Component} from 'react';
 import { View,StyleSheet,Text } from "react-native";
 import { Icon, Left, Right, Container, Content, Header, Body, Title } from 'native-base';
 import { HeaderScreen} from '../Ui/Header';
-import TabsList from './الفئات/Tabs';
+import TabsList from './Categories/Tabs';
 
 export default class Home extends Component{
   

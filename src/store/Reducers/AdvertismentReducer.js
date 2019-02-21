@@ -14,7 +14,7 @@ const initialstate={
 }
 
 export default advertismentReducer=(state=initialstate,action)=>{
-    debugger;
+   // debugger;
     switch (action.type) {
         case ADD_ADVERTISMENT_REQUEST:
             return{

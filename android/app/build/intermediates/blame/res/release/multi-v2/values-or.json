@@ -1,27 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/macbookair/Documents/GitHub/FinalModarebAraby/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-or/values-or.xml",
+            "outputFile": "/Volumes/PARTITION2/yarb/elModarb/android/app/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-or/values-or.xml",
             "map": [
                 {
-                    "source": "/Users/macbookair/.gradle/caches/transforms-1/files-1.1/firebase-messaging-17.3.4.aar/e89c1b9a7eedc03e292668c2e84f3008/res/values-or/values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "205",
-                        "endColumns": "102",
-                        "endOffsets": "307"
-                    },
-                    "to": {
-                        "startLines": "20",
-                        "startColumns": "4",
-                        "startOffsets": "2883",
-                        "endColumns": "106",
-                        "endOffsets": "2985"
-                    }
-                },
-                {
-                    "source": "/Users/macbookair/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/a4aaae16d91da9b5d4b06bfd56f3c459/res/values-or/values.xml",
+                    "source": "/Users/ehshs/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/2f8d516919b67bede0045e0fd3899676/res/values-or/values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -38,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "/Users/macbookair/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/944100480979d301fd30f90847b49086/res/values-or/values.xml",
+                    "source": "/Users/ehshs/.gradle/caches/transforms-1/files-1.1/play-services-basement-16.0.1.aar/b9b8272c4e4f04725fdf819f91a11976/res/values-or/values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
@@ -52,6 +35,23 @@
                         "startOffsets": "1302",
                         "endColumns": "198",
                         "endOffsets": "1496"
+                    }
+                },
+                {
+                    "source": "/Users/ehshs/.gradle/caches/transforms-1/files-1.1/firebase-messaging-17.3.4.aar/03583bca9f4e9f179c75b05cb0445e99/res/values-or/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "205",
+                        "endColumns": "102",
+                        "endOffsets": "307"
+                    },
+                    "to": {
+                        "startLines": "20",
+                        "startColumns": "4",
+                        "startOffsets": "2883",
+                        "endColumns": "106",
+                        "endOffsets": "2985"
                     }
                 }
             ]

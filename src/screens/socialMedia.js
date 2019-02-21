@@ -97,7 +97,7 @@ class SocialMedia extends Component {
     }
 
     async getSocialMedia() {    
-        debugger;
+       // debugger;
 
         const facebookSocial = await this.localStorage.getUserSocial("f");
         facebookSocial ? this.state.socialF = true : null;
@@ -222,7 +222,7 @@ class SocialMedia extends Component {
 
                                 if (value) {
 
-                                    debugger;
+                                   // debugger;
                                     this.setState({
                                         socialL: true,
                                         title: localization.linkedinUrl,

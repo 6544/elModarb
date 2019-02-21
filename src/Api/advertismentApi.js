@@ -19,12 +19,12 @@ export default class AdvertismentApi {
     async getAllAdvertisments() {
     const AllAdvertisments="http://almodarrebalarabi.com/api/advertisements";
 
-        debugger;
+       // debugger;
         const response=await fetch(AllAdvertisments,
             {
                 method:'GET'
             });
-        debugger;
+       // debugger;
         const data=await response.json();
         return data;
     }

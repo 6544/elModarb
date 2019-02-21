@@ -2,7 +2,7 @@ GetAllTrainersurl="http://almodarrebalarabi.com/api/persons/trainers";
 async function getAllTrainersFromApi(){
     var response=await fetch(GetAllTrainersurl);
     const data=await response.json();
-    debugger;
+   // debugger;
     console.log(data);
     return data;
 }
@@ -43,7 +43,7 @@ const PostTrainerNewUrl="http://almodarrebalarabi.com/api/register/trainer";
         method:'POST',
         body:tempbody
     });
-    debugger;
+   // debugger;
     const data=await response.json();
     debugger
   

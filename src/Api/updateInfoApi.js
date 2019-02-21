@@ -3,7 +3,7 @@ class Api {
     professionalCardUrl="http://almodarrebalarabi.com/api/person/update/professionalcard/"
     formData;
     async updateInfo(infoData) {
-        debugger;
+       // debugger;
         this.formData = new FormData();
         this.formData.append('name', infoData.name);
         this.formData.append('email', infoData.email);
@@ -29,7 +29,7 @@ class Api {
         return data;
     }
     async updateProfessionalCard(professionalData) {
-        debugger;
+       // debugger;
         this.formData = new FormData();
         this.formData.append("card",professionalData.card);
 
@@ -44,7 +44,7 @@ class Api {
             }
         )
         const data = await response.json();
-        debugger;
+       // debugger;
         return data;
         
     }

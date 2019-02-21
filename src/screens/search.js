@@ -77,7 +77,7 @@ class Search extends Component {
     render() {
 
         if (this.props.countries) {
-            debugger;
+           // debugger;
             this.getAllNeededCountries(this.props.countries);
         }
 
@@ -101,10 +101,10 @@ class Search extends Component {
             }
         }
 
-        debugger;
+       // debugger;
 
         if (this.props.trainer) {
-            debugger;
+           // debugger;
             if (this.props.trainer.length != 0)
                 this.props.navigation.navigate('SearchResults', { dataArray: this.props.trainer, objectData: this.state.type == "place" ? 'CenterDetails' : 'TrainerDetails' })
             else {
@@ -251,7 +251,7 @@ class Search extends Component {
                     <View style={{ flex: 0.9 }}>
 
                       {this.props.loading?<ActivityIndicator/>:  <CustomButton text={localization.search} style={{ flex: 1, alignSelf: 'center', width: '75%',height:60, top: 20, justifyContent: 'center', backgroundColor: 'red' }} onPress={() => {
-                            debugger;
+                           // debugger;
                             this.isNotNull(this.state.type, this.state.name, this.state.city_id, this.state.country_id, this.state.state_id);
                         }} />
                     }

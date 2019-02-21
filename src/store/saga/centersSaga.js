@@ -2,7 +2,7 @@ import {REGISTER_SUCCESS,GET_ALL_CENTERS_SUCCESS,GET_ALL_CENTERS_FAIL,REGISTER_C
 import {put,takeLatest} from 'redux-saga/effects';
 import {Api} from '../../Api/centerApi';
 function* getAllCenters(){
-    // debugger;
+    //// debugger;
 
     try{
 const recievedCenters=yield Api.getAllCentersFromApi();
@@ -14,7 +14,7 @@ yield put({type:GET_ALL_CENTERS_SUCCESS,recievedCenters:recievedCenters});
     }
 }
 export function* watchFetchCenters(){
-    debugger;
+   // debugger;
 
     yield takeLatest(GET_ALL_CENTERS,getAllCenters);
 }
@@ -23,29 +23,29 @@ function* registerCenter(action)
 {
  
     try{
-        debugger;
+       // debugger;
   const result=yield Api.RegisterCenter(action.newCenter);
-  debugger;
+ // debugger;
   if(result.status===true)
   {
       yield put({type:REGISTER_SUCCESS,result:result}); //change
   }
         else
         {
-            debugger;
+           // debugger;
             yield put({type:REGISTER_CENTER_FAIL,error:result.data.errors});
         }
     }
     catch(error)
     {
-        // debugger;
+        //// debugger;
 //////fail register
 yield put({type:REGISTER_CENTER_FAIL,error});
 
     }
 }
 export function* watchAddNewCenter(){
-    debugger;
+   // debugger;
 
     yield takeLatest(REGISTER_CENTER,registerCenter);
 }

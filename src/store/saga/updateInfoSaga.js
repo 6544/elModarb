@@ -5,7 +5,7 @@ import * as actions from "../Actions/actions/updateInfo";
 
 function* updateUserInfo(action)
 {
-         debugger;
+        // debugger;
   const data=yield Api.updateInfo(action.infoData);
   if(data.status)
   {
@@ -13,13 +13,13 @@ function* updateUserInfo(action)
   }
         else
         {
-            debugger;
+           // debugger;
             yield put(actions.updateInfoFailure(data));
         }
   
 }
 function* updateUserProfessionalCard(action){
-    debugger;
+   // debugger;
     const data=yield Api.updateProfessionalCard(action.professionalData);
     if(data.status)
     {
@@ -27,14 +27,14 @@ function* updateUserProfessionalCard(action){
     }
           else
           {
-              debugger;
+             // debugger;
               yield put(actions.updateProfessionalCardFailure(data));
           }
     
   
 }
 export function* watchUpdateInfo(){
-    debugger;
+   // debugger;
 
     yield takeLatest(infoActions.UPDATEINFO_REQUEST,updateUserInfo);
 }

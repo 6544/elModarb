@@ -3,7 +3,7 @@ import {GET_ALL_TRAINERS,GET_ALL_TRAINERS_SUCCESS,
 import {put,takeLatest} from 'redux-saga/effects';
 import {Api} from '../../Api/trainerApi';
 function* getAllTrainers(){
-    // debugger;
+    //// debugger;
 
     try{
 const recievedTrainers=yield Api.getAllTrainersFromApi();
@@ -15,7 +15,7 @@ yield put({type:GET_ALL_TRAINERS_SUCCESS,recievedTrainers:recievedTrainers});
     }
 }
 export function* watchFetchTrainers(){
-    debugger;
+   // debugger;
 
     yield takeLatest(GET_ALL_TRAINERS,getAllTrainers);
 }
@@ -30,20 +30,20 @@ function* registerTrainer(action)
   }
         else
         {
-            debugger;
+           // debugger;
             yield put({type:REGISTER_TRAINER_FAIL,error:result.data.errors});
         }
     }
     catch(error)
     {
-        // debugger;
+        //// debugger;
 //////fail register
 yield put({type:REGISTER_TRAINER_FAIL,error});
 
     }
 }
 export function* watchAddNewTrainer(){
-    debugger;
+   // debugger;
 
     yield takeLatest(REGISTER,registerTrainer);
 }

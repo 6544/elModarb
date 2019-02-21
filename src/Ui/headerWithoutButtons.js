@@ -24,7 +24,7 @@ export const HeaderWithoutButtons = (props) => (
             <Icon name='arrow-back' style={{ color: Colors.white }}
                 onPress={
                     () => {
-                        debugger;
+                       // debugger;
                         props.navigation.pop();
                     }
 

@@ -8,7 +8,7 @@ class Api {
         return countriesData;
     }
     async getAllCities(country) {
-         debugger;
+        // debugger;
         const response = await fetch(`http://almodarrebalarabi.com/api/states/${country}`);
         const citiesData = await response.json();
         return citiesData;

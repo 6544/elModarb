@@ -5,7 +5,7 @@ class Api {
     async Add_UpdateSocialIntegration(socialData) {
         this.socialFormData = new FormData();
         this.socialFormData.append(`socials[${socialData.letter}]`, socialData.url);
-        debugger;
+       // debugger;
 
         const response = await fetch(
             this.createSocialUrl+socialData.id
@@ -17,9 +17,9 @@ class Api {
                 body: this.socialFormData
 
             });
-            debugger;
+           // debugger;
         const data = await response.json();
-        debugger;
+       // debugger;
 
         console.log(data);
 
